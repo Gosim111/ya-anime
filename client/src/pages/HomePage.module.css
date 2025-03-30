@@ -1,0 +1,44 @@
+.homeContainer {
+    /* Увеличим боковые отступы еще больше для "воздуха" */
+    padding: 0 var(--spacing-8);
+    width: 100%;
+    max-width: 1600px; /* Оставляем широким */
+    margin: 0 auto;
+}
+
+.section {
+    /* Отступ секции сверху и снизу */
+    padding: var(--spacing-16) 0;
+}
+
+/* Стили для заголовка h2 берутся из global.css */
+.sectionTitle {
+    margin-bottom: var(--spacing-8); /* Увеличим отступ до сетки */
+    /* Убираем дополнительные стили, если были */
+}
+
+.animeGrid {
+    display: grid;
+    /* Можно оставить 200px или чуть увеличить */
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    /* Увеличиваем gap */
+    gap: var(--spacing-8);
+}
+
+/* Стили для состояний загрузки/ошибки/не найдено */
+.loading,
+.error,
+.notFound {
+    color: var(--text-muted);
+    font-size: var(--font-size-lg);
+    padding: var(--spacing-16) 0; /* Больше отступ */
+    text-align: center;
+    min-height: 300px; /* Больше минимальная высота */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error {
+    color: #f87171; /* Красный цвет ошибки */
+}

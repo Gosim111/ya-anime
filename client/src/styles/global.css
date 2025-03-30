@@ -1,0 +1,167 @@
+/* Сброс стилей */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Базовый размер для rem */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Новый фон */
+    background-color: var(--background-primary);
+    /* Новый основной цвет текста */
+    color: var(--text-base);
+    line-height: 1.6; /* Стандартная высота строки */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto; /* Добавлено для предотвращения искажений */
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    border: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    /* Новый акцентный цвет */
+    color: var(--accent-1);
+    text-decoration: none;
+    transition: color var(--transition-duration-fast) var(--transition-timing-default);
+}
+
+a:hover {
+    /* Более насыщенный акцент при наведении */
+    color: var(--accent-2);
+}
+
+#root {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- НОВЫЕ CSS ПЕРЕМЕННЫЕ --- */
+:root {
+    /* Фоны */
+    --background-primary: #0f0f0f;   /* Очень темный */
+    --background-card: #18181b;      /* Темно-серый/черный для карточек */
+    --background-container: #1f2937; /* Темно-сине-серый для контейнеров (хедер/футер) */
+    /* Альтернативный фон для контейнеров, если нужно */
+    /* --background-container-alt: #1e1e1e; */
+
+    /* Текст */
+    --text-header: #f9fafb;        /* Почти белый (заголовки) */
+    --text-base: #e5e7eb;          /* Светло-серый (основной) */
+    --text-secondary: #d1d5db;    /* Чуть темнее серого */
+    --text-muted: #9ca3af;        /* Приглушенный */
+    --text-extra-muted: #6b7280;   /* Очень приглушенный */
+
+    /* Акценты */
+    --accent-1: #a78bfa;          /* Светло-фиолетовый (основной) */
+    --accent-2: #8b5cf6;          /* Более насыщенный фиолетовый (hover, кнопки) */
+
+    /* Границы */
+    --border-color: #374151;       /* Темно-серый разделитель */
+
+    /* Тени (легкие) */
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.15), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* Чуть заметнее */
+
+    /* Шрифт */
+    --font-family-main: 'Inter', sans-serif;
+
+    /* Размеры шрифтов (rem) */
+    --font-size-xs: 0.75rem;    /* 12px */
+    --font-size-sm: 0.875rem;   /* 14px */
+    --font-size-base: 1rem;     /* 16px */
+    --font-size-lg: 1.125rem;   /* 18px */
+    --font-size-xl: 1.25rem;    /* 20px */
+    --font-size-2xl: 1.5rem;    /* 24px */
+    --font-size-3xl: 1.875rem;  /* 30px */
+    --font-size-4xl: 2.25rem;   /* 36px */
+
+    /* Отступы (rem, кратные 0.25rem = 4px) */
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 0.75rem;
+    --spacing-4: 1rem;
+    --spacing-5: 1.25rem;
+    --spacing-6: 1.5rem;
+    --spacing-8: 2rem;
+    --spacing-10: 2.5rem;
+    --spacing-12: 3rem;
+    --spacing-16: 4rem;
+    --spacing-20: 5rem;
+    --spacing-24: 6rem; /* Добавлен больший отступ */
+
+    /* Радиусы скругления */
+    --border-radius-md: 6px;
+    --border-radius-lg: 8px;
+
+    /* Анимации */
+    --transition-duration-fast: 0.15s;
+    --transition-duration-medium: 0.2s; /* Ускорим немного */
+    --transition-duration-slow: 0.3s;
+    --transition-timing-default: ease-in-out; /* Простая кривая */
+
+}
+
+/* Базовые стили для заголовков */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-header); /* Почти белый */
+    font-weight: 600; /* SemiBold */
+    line-height: 1.3; /* Компактнее */
+    margin-bottom: var(--spacing-4);
+}
+
+/* Иерархия размеров и насыщенности */
+h1 { font-size: var(--font-size-4xl); font-weight: 700; } /* Bold */
+h2 { font-size: var(--font-size-3xl); font-weight: 700; }
+h3 { font-size: var(--font-size-xl); } /* Используем для заголовков карточек */
+h4 { font-size: var(--font-size-lg); }
+h5 { font-size: var(--font-size-base); }
+h6 { font-size: var(--font-size-sm); }
+
+p {
+    margin-bottom: var(--spacing-4);
+    color: var(--text-secondary); /* Чуть приглушеннее основного */
+    max-width: 70ch; /* Ограничение ширины */
+}
+/* Убираем отступ у последнего элемента */
+*:last-child {
+    margin-bottom: 0;
+}

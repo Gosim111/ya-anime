@@ -1,0 +1,63 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-2); /* Расстояние между кнопками */
+    margin-top: var(--spacing-12); /* Отступ от сетки аниме */
+    padding-bottom: var(--spacing-8); /* Отступ снизу страницы */
+}
+
+.pageButton {
+    background-color: var(--background-card); /* Фон как у карточки */
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    min-width: 40px; /* Минимальная ширина */
+    height: 40px;
+    padding: 0 var(--spacing-2);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color var(--transition-duration-fast) var(--transition-timing-default),
+    color var(--transition-duration-fast) var(--transition-timing-default),
+    border-color var(--transition-duration-fast) var(--transition-timing-default);
+}
+
+.pageButton:not(:disabled):hover {
+    background-color: var(--background-tertiary);
+    border-color: var(--border-color-light);
+    color: var(--text-header);
+}
+
+/* Стиль активной кнопки */
+.pageButton.active {
+    background-color: var(--accent-2);
+    border-color: var(--accent-2);
+    color: var(--text-header);
+    font-weight: 600;
+    cursor: default;
+}
+
+/* Стиль неактивных кнопок */
+.pageButton:disabled:not(.active) {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Кнопки со стрелками */
+.arrowButton {
+    font-size: var(--font-size-lg); /* Крупнее стрелки */
+}
+
+/* Многоточие */
+.dots {
+    color: var(--text-muted);
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

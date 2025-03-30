@@ -1,0 +1,123 @@
+.cardLink {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-radius: var(--border-radius-lg); /* Скругление 8px */
+    background-color: var(--background-card); /* Фон карточки */
+    overflow: hidden;
+    /* Плавный переход для тени и подъема */
+    transition: transform var(--transition-duration-medium) var(--transition-timing-default),
+    box-shadow var(--transition-duration-medium) var(--transition-timing-default);
+    height: 100%; /* Занимает всю высоту ячейки */
+    border: 1px solid var(--border-color); /* Добавим границу для отделения */
+}
+
+/* Эффект подъема и тени при наведении */
+.cardLink:hover {
+    transform: translateY(-6px); /* Подъем */
+    box-shadow: var(--shadow-lg); /* Более заметная тень */
+    border-color: var(--border-color-light); /* Чуть светлее граница */
+}
+
+/* Убираем .card, т.к. .cardLink теперь основной контейнер */
+
+.posterWrapper {
+    position: relative; /* Для возможных значков поверх */
+    width: 100%;
+    aspect-ratio: 2 / 3; /* Соотношение сторон */
+    overflow: hidden;
+    background-color: var(--background-tertiary); /* Фон-заглушка */
+    /* Скругляем только верхние углы, т.к. карточка теперь имеет фон */
+    /* border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0; */
+    /* Или оставляем скругление общим для .cardLink */
+}
+
+.poster {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Убираем зум постера, т.к. есть эффект подъема всей карточки */
+    /* transition: transform ...; */
+}
+
+/* .cardLink:hover .poster { */
+/* transform: scale(1.03); */ /* Убрали зум */
+/* } */
+
+/* Опциональные стили для значков поверх постера */
+/* .badgesOnPoster {
+  position: absolute;
+  bottom: var(--spacing-2);
+  left: var(--spacing-2);
+  display: flex;
+  gap: var(--spacing-2);
+  z-index: 5;
+} */
+
+
+/* Блок с информацией под постером */
+.info {
+    padding: var(--spacing-3) var(--spacing-4); /* Отступы внутри блока */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2); /* Расстояние между элементами */
+    min-height: 90px; /* Минимальная высота для выравнивания */
+}
+
+.title {
+    font-size: var(--font-size-base); /* Основной размер */
+    font-weight: 600; /* SemiBold */
+    color: var(--text-header); /* Белый */
+    line-height: 1.4;
+    margin: 0;
+    /* Ограничение 2 строки */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cardLink:hover .title {
+    color: var(--accent-1); /* Подсветка заголовка при наведении на карточку */
+}
+
+
+/* Контейнер для мета-информации (значки) */
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-2);
+    /* Располагаем внизу блока info */
+    margin-top: auto;
+    padding-top: var(--spacing-2);
+}
+
+/* Общий стиль для значков */
+.badge {
+    display: inline-block;
+    background-color: var(--background-tertiary); /* Темный фон */
+    color: var(--text-muted); /* Приглушенный текст */
+    padding: 3px var(--spacing-2);
+    border-radius: var(--border-radius-md); /* Скругление 6px */
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    white-space: nowrap;
+    border: 1px solid var(--border-color);
+}
+
+/* Значок рейтинга (пример) */
+/* .ratingBadge {
+    color: #facc15; // Yellow
+    border-color: #facc15;
+    background-color: rgba(250, 204, 21, 0.1);
+} */
+
+/* Статус (пример) */
+/* .status {
+    font-size: var(--font-size-xs);
+    color: var(--text-extra-muted);
+    margin: 0;
+    margin-top: auto; // Прижимает к низу, если нет значков
+    padding-top: var(--spacing-2);
+} */

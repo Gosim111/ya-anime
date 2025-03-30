@@ -1,0 +1,21 @@
+.catalogContainer {
+    /* Отступы как у HomePage */
+    padding: var(--spacing-16) var(--spacing-8);
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.pageTitle {
+    /* Используем стиль h1 из global.css */
+    text-align: center; /* Центрируем заголовок каталога */
+    margin-bottom: var(--spacing-12); /* Большой отступ до контента */
+}
+
+/* Стили для .loading, .error, .notFound, .animeGrid берутся из HomePage.module.css */
+
+/* Placeholder для будущих контролов */
+.controls {
+    margin-bottom: var(--spacing-8);
+    /* TODO: Стили для фильтров/сортировки */
+}
